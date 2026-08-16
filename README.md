@@ -1,3 +1,5 @@
-Maria's Business Analytics Portfolio
+# Business Analytics Portfolio
 
-Generated with Claude Code
+This repository contains my business analytics portfolio website.
+
+Technologies: HTML, Git, GitHub, Python
