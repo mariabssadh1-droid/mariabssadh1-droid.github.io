@@ -16,11 +16,11 @@
         margin: 0;
         padding: 0;
       }
-
-      body {
+body {
+   	 margin: 0;
         font-family: Arial, Helvetica, sans-serif;
-        color: #222;
-        background: #f7f7f7;
+        color: #243746;
+        background: #F4F8F8;
         line-height: 1.5;
       }
 
@@ -33,23 +33,19 @@
       /* ---------- HEADER (photo + name + subheading) ---------- */
       header {
         text-align: center;
-        margin-bottom: 30px;
+        margin-bottom: 20px;
       }
 
       /* Empty space for photo — replace with your own <img> if you like */
       .photo {
-        width: 140px;
-        height: 140px;
-        border-radius: 50%;
-        background: #ddd;
-        border: 2px dashed #aaa;
-        margin: 0 auto 16px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: #888;
-        font-size: 13px;
-      }
+    width: 180px;
+    height: auto;
+    border-radius: 12px;
+    border: 3px solid #DCECF7;
+    box-shadow: 0 6px 18px rgba(23, 50, 77, 0.12);
+    display: block;
+    margin: 0 auto 28px;
+}
 
       header h1 {
         font-size: 28px;
@@ -91,21 +87,26 @@
         display: block;
       }
 
-      .panel {
-        background: #fff;
-        border: 1px solid #eee;
-        border-radius: 6px;
-        padding: 24px;
-      }
+     .panel {
+    width: 100%;
+    background: transparent;
+    border: none;
+    padding: 0;
+    box-shadow: none;
+}
 
       /* ---------- PROJECT CARDS (1 x 3 grid) ---------- */
       .cards {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 16px;
-      }
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 48px;
+    width: 100%;
+    align-items: stretch;
+}
 
       .card {
+    	width: 100%;
+    	box-sizing: border-box;
         border: 1px solid #eee;
         border-radius: 6px;
         overflow: hidden;
@@ -138,16 +139,150 @@
           grid-template-columns: 1fr;
         }
       }
-    </style>
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    box-sizing: border-box;
+    padding: 22px 6vw;
+    background-color: #17324D;
+    margin-bottom: 70px;
+}
+
+.nav-name {
+    color: #FFFFFF;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 24px;
+}
+
+.nav-links a {
+    color: #DCECF7;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.nav-links a:hover {
+    color: #FFFFFF;
+}
+
+.section {
+    width: 100%;
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 30px;
+    box-sizing: border-box;
+}
+
+#about,
+#projects,
+#research,
+#contact {
+    width: 100%;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#projects {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+#about {
+    margin-top: 35px;
+}
+
+.section h2 {
+    text-align: left;
+    font-size: 22px;
+    color: #17324D;
+    margin-bottom: 18px;
+    letter-spacing: 0.5px;
+}
+
+.glance-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 36px;
+    width: 100%;
+}
+
+.glance-card {
+    background-color: #DCECF7;
+    padding: 26px 20px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.glance-card h3 {
+    color: #17324D;
+    margin-bottom: 12px;
+}
+
+.glance-card p {
+    margin: 6px 0;
+    color: #405866;
+}   
+
+
+/* ---------- CONTACT ---------- */
+
+.contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 24px;
+}
+
+.contact-links a {
+    background-color: #17324D;
+    color: #FFFFFF;
+    padding: 12px 22px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.contact-links a:hover {
+    background-color: #405866;
+}
+
+.section-intro {
+    margin-bottom: 40px;
+}
+
+#contact {
+    text-align: center;
+}
+
+ </style>
   </head>
 
   <body>
     <div class="container">
-      <!-- ============================================================
+<nav class="navbar">
+    <div class="nav-name">Maria George Bssadh</div>
+
+    <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#research">Research</a>
+        <a href="#contact">Contact</a>
+    </div>
+</nav>     
+
+ <!-- ============================================================
          HEADER: photo, name, experiences
          ============================================================ -->
       <header>
-        <!-- Replace this div with <img src="your-photo.jpg" class="photo"> -->
         <img src="Headshot - Maria Bssadh.jpg" class="photo">
 
         <h1>Maria George Bssadh</h1>
@@ -157,30 +292,26 @@
 </p>
       </header>
 
-      <!-- ============================================================
-         TABS
-         ============================================================ -->
-      <div class="tabs">
-        <button class="tab-button active" onclick="showTab('about')">
-          About Me
-        </button>
-        <button class="tab-button" onclick="showTab('projects')">
-          Projects
-        </button>
-      </div>
-
       <!-- ---------- TAB 1: ABOUT ME ---------- -->
-      <div id="about" class="tab-content active">
+      <section id="about" class="section">
         <div class="panel">
+	<h2>About Me</h2>
           <p>
-            I’m a finance and analytics professional with experience in investment accounting, financial analysis, and portfolio analysis. Through my professional experience, I’ve developed strong analytical and problem-solving skills while working with financial data, valuations, and investment-related decisions. I’m currently expanding my technical skills in Python, SQL, data visualization, and predictive analytics. I’m particularly interested in business analytics roles such as Quantitative Investment Analyst or Investment Risk Analyst, where I can combine my finance background with data analytics to predict stock performance, evaluate investment opportunities, assess financial risk, and support data-driven investment decisions.
+             
+		A current MMA candidate at McGill University with a background in Finance. I hope to continue growing my technical skillset as I explore the realm of data science and how it applies to predictive analysis and optimization. I hope to use what I learn when building my own projects and to act as a solid foundation for what is to come professionally, as I hope to be a Quantitative Analyst.  
      
-          </p>
-        </div>
-      </div>
+         </p>
+	</div>
+
+	</section>
 
       <!-- ---------- TAB 2: PROJECTS ---------- -->
-      <div id="projects" class="tab-content">
+      <section id="projects" class="section">
+<h2>Featured Projects</h2>
+
+<p class="section-intro">
+    A selection of projects that are in a work in progress!.
+</p>
         <div class="cards">
           <!-- CARD 1 -->
           <div class="card">
@@ -209,26 +340,56 @@
             </div>
           </div>
         </div>
-      </div>
+      </section>
+
     </div>
 
-    <!-- ============================================================
-       SIMPLE TAB SWITCHING SCRIPT
-       ============================================================ -->
-    <script>
-      function showTab(id) {
-        // hide all tab contents
-        document.querySelectorAll(".tab-content").forEach(function (el) {
-          el.classList.remove("active");
-        });
-        // remove active state from all buttons
-        document.querySelectorAll(".tab-button").forEach(function (btn) {
-          btn.classList.remove("active");
-        });
-        // show the selected tab + highlight the clicked button
-        document.getElementById(id).classList.add("active");
-        event.target.classList.add("active");
-      }
-    </script>
+</section>
+
+<section id="research" class="section">
+
+ <h2>Research Interests</h2>
+
+    <p class="section-intro">
+        Areas I am interested in exploring further through research and applied analytics.
+    </p>
+
+    <div class="glance-grid">
+
+        <div class="glance-card">
+            <h3>Predictive Analytics</h3>
+            <p>Exploring how historical data can be used to identify patterns and predict future outcomes.</p>
+        </div>
+
+        <div class="glance-card">
+            <h3>Machine Learning</h3>
+            <p>Exploring the application of machine learning techniques to real-world data and problems.</p>
+        </div>
+
+        <div class="glance-card">
+            <h3>Data-Driven Decision Making</h3>
+            <p>Exploring how data and analytical methods can support better decision-making.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<section id="contact" class="section">
+
+    <h2>Let's Connect</h2>
+
+    <p class="section-intro">
+        Feel free to connect with me or reach out!
+    </p>
+
+    <div class="contact-links">
+        <a href="mailto:mariabssadh@gmail.com">Email Me</a>
+        <a href="https://www.linkedin.com/in/mariabssadh" target="_blank">LinkedIn</a>
+    </div>
+
+</section>
+    </div>
+
   </body>
 </html>
